@@ -1,0 +1,139 @@
+Version 1 was the primary version with a few errors.
+
+1/2/2018 Version 2: Changed the number of bins, minimum and maximum limits of histogram in proton.mac.
+
+1/2/2018 Version 3: Changed the type of fNbElectronsStrip1, fNbElectronsStrip2 in RunAction.hh from G4double to G4int.
+
+22/2/2018 Version 4: Added two couples of BPIX modules (one in front of and one behind the DUT). Calculating the entrance point of the primary proton inside Pixel Detector 1 and its exit point from Pixel Detector 2.
+
+23/2/2018 Version 5: Decreased the thickness of pixel modules. Calculating the deflection angle of the primary track between the two pixel modules and filling with it histogram 84.
+
+1/3/2018 Version 6: Local electric field added to each strip sensor. Global electric field could be added through ElectricFieldSetup.
+
+7/3/2018 Version 7: Positions of primary inside strip sensors 1 and 2 displayed.
+
+9/3/2018 Version 8: Midpoints of primary inside each detector displayed.
+
+13/3/2018 Version 9: Let A = fPointPix1mid, B = fPointDet1mid, C = fPointDet2mid, D = fPointPix2mid. Let dB = distance between B and AD and dC = distance between C and AD. Histograms filled with dB and dC for each event.
+
+13/3/2018 Version 10: Let B' be the AD point with same z as B. Let C' be the AD point with the same z as C. Histograms filled with B'Bx, B'By, C'Cx, C'Cy for each event.
+
+13/3/2018 Version 11: Bug in filling the histograms per strip fixed.
+
+15/3/2018 Version 12: World material changed to air.
+
+20/3/2018 Version 13: Kinetic energy of secondaries calculated and could be printed out.
+
+Versions 14 and 15 were non-working and full of bugs.
+
+11/4/2018 Version 16: Possibility for 2S DUT rotation about the x-axis added.
+
+11/4/2018 Version 17: Strips a and b for each sensor separated.
+
+12/4/2018 Version 18: Changed "Air" material. Added CO2 and ArgonGas to it.
+
+3/5/2018 Version 19: Changed titles of histograms 119-122.
+
+Version 20 was the same as Version 19, but with different numbers of bins, min and max values in histograms.
+
+25/5/2018 Version 21: Histograms and ntuples filled with number of hits per strip. We consider that when the deposited energy in the volume of a strip exceeds 5000 X 3.67 eV [5000 e = signal threshold for a valid hit, 3.67 eV = energy needed for the production of an electron-hole pair], then we have a hit.
+
+21/6/2018 Version 22: Hit multiplicity redefined (per event). Scintillator added. Pixel layer added to pixel detectors.
+
+25/6/2018 Version 22: Calculation of x- and y-coordinates of impact points.
+
+Version 23 was a trial version to find the mistake in the rotation matrix of the DUT.
+
+29/6/2018 Version 24: Calculation of z-coordinates of impact points.
+
+8/7/2018 Version 25: Attempt to calculate stored energy inside each pixel-volume.
+
+12/7/2018 Version 26: Calculation of number of hits per pixel module.
+
+14/8/2018 Version 27: Calculation of average positions of primaries in Sensors 1 and 2 according to the centroids of the strip surfaces. Charge weighting included.
+
+17/8/2018 Version 28: Check in every event if hits in Sensor 1 correspond to hits in Sensor2. Output printed after the end of each run. Bug with weights = 0 fixed. Pure detector resolution histograms added (reconstructed coordinate - real coordinate of primary particle in each sensor).
+
+27/8/2018 Version 29: Impact points of primary protons in BPIX modules defined with respect to the centroids of pixels. The above positions in the pixel modules are plotted in histograms 203-208.
+
+7/9/2018 Version 30: Seed selection option added in proton.mac.
+
+8/9/2018 Version 31: Bug with fixing histograms 117 and 118 (which were filled with nan in a few cases) removed.
+
+17/9/2018 Version 32: Weights of strips removed.
+
+17/9/2018 Version 33: Bins of hit multiplicities fixed.
+
+19/9/2018 Version 34: Reco-y splitted in three different histograms (y = -45 um, y = 0 um, y = 45 um).
+
+27/9/2018 Version 35: Reco-y check per event option added: printing of every extrapolated and reconstructed position.
+
+9/10/2018 Version 36: General particle source added. Changes made in PrymaryGeneratorAction and proton.mac. sigma of beam included.
+
+10/10/2018 Version 37: Changed beam shape to ellipsoid and removed sigma.
+
+21/12/2019 Version 49: This version is based on v37, ignoring the previous versions which were using geometries for the telescope planes different than those of the Phase-1 BPIX modules. Active thickness for strip sensors switched to 290 um, as these sensors will be used after all. Modules doubled in y-direction (although no pixel information available close to the edges: it's easier to switch between one- and two-module planes if avoiding to send the beam close to the edges of the plane). gps position = (-1, -0.1, -20) cm
+
+22/12/2019 Version 50: Hit match finding added in 2S for a window of 5 strips. No check for distance to track yet.
+
+23/12/2019 Version 51: Aluminum added in front of particle beam. Number of events with hit matches in 2S sensors printed out.
+
+25/12/2019 Version 52: Positions of modules, scintillators, DUT and aluminium changed. z = 0 cm corresponds to z = 13.5 cm in real life. Second scintillator added.
+
+26/12/2019 Version 53: Calculation of energy deposition in scintillators added.
+
+28/12/2019 Version 53: Stub defined: If hit matching in 1st 2S sensor < 100 um away from track in y-direction, then we have efficiency = 1 for the current event.
+
+3/1/2020 Version 54: xy coordinates of beam 20 cm after the last scintillator plotted.
+
+4/1/2020 Version 55: Test version.
+
+6/1/2020 Version 56: FWHM = 5 mm, halfx = halfy = 2.123 mm. 
+
+9/1/2020 Version 59: Rotation of BPIX removed. (It was 0 anyway.)
+
+9/1/2020 Version 60: World Size changed to 47 cm.
+
+10/1/2020 Version 61: Calculation of energy deposition inside each component added.
+
+11/1/2020 Version 62: Calculation of kinetic energy at entrance and exit of each component added.
+
+11/1/2020 Version 63: Test and continuation of version 62.
+
+13/1/2020 Version 64: Beam xy profile at exit of each volume. Beam size adjusted to real run.
+
+15/1/2020 Version 65: Energy deposition calculated separately in the sensor and the ROC of each module.
+
+15/1/2020 Version 66: Calculation of global time of proton entrance in each scintillator added.
+
+16/1/2020 Version 67: Calculation of electrons created in the sensors of the 2S module per primary proton (event).
+
+17/1/2020 Version 68: Plot of kinetic energy at entrance of scintillator 2 vs. energy loss in scintillator 2.
+
+17/1/2020 Version 69: Change beam parameters. Test version.
+
+18/1/2020 Version 70: Energy of primary proton vs. Z for the whole World added. To be run for a single event only.
+
+19/1/2020 Version 71: Cluster size in pixel layer and 2S sensors: re-calculation. Module 1: bottom of Pixel Layer 1. Module 2: top of Pixel Layer 1. Module 3: bottom of Pixel Layer 2. Module 4: top of Pixel Layer 2.
+
+19/1/2020 Version 72: Cluster occupancy per event calculation added.
+
+19/1/2020 Version 73: Attempts to fix cluster size.
+
+22/1/2020 Version 74: Add bias on strip and pixel sensors.
+
+10/2/2020 Version 77: col, row H1 plots added.
+
+13/2/2020 Version 78: Artificial charge sharing model introduced for pixels.
+
+13/2/2020 Version 79: A test version.
+
+13/2/2020 Version 80: Artificial charge sharing model introduced for strips.
+
+13/2/2020 Version 81: Noise added in charge sharing model for pixels and strips.
+
+20/2/2020 Version 82: Random decision if charge will move to adjacent pixel/strip or not.
+
+21/2/2020 Version 83: Find the optimal value of the sigma of shared charge for pixels and strips.
+
+16/7/2020 Version 85: Correction of electric field.
